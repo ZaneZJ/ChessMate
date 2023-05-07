@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
+import com.example.chessmate.Activity.StartActivity;
 import com.example.chessmate.Game.Game;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
         game.print();
 //        game.move();
+
+        Button button = (Button) findViewById(R.id.startbtn);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,StartActivity.class));
+            }
+        });
 
     }
 }

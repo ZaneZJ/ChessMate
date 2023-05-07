@@ -67,7 +67,6 @@
         android:textColor="@color/white"
         android:textSize="30px"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -84,7 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText2"
+        android:id="@+id/firstPlayerInput"
         android:layout_width="202dp"
         android:layout_height="49dp"
         android:layout_marginStart="-3dp"
@@ -116,10 +115,10 @@
         android:textColor="@color/black"
         android:textSize="40px"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText2" />
+        app:layout_constraintTop_toBottomOf="@+id/firstPlayerInput" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
+        android:id="@+id/secondPlayerInput"
         android:layout_width="201dp"
         android:layout_height="50dp"
         android:layout_marginStart="-318dp"

@@ -12,10 +12,15 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.chessmate.MainActivity;
 import com.example.chessmate.R;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class StartActivity extends AppCompatActivity  {
 
-    private Button startBtn;
+    public String firstPlayer = "";
+    public String secondPlayer = "";
+
+    TextInputEditText firstPlayerInput = (TextInputEditText) findViewById(R.id.firstPlayerInput);
+    TextInputEditText secondPlayerInput = (TextInputEditText) findViewById(R.id.secondPlayerInput);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +34,17 @@ public class StartActivity extends AppCompatActivity  {
 
         setContentView(R.layout.activity_start);
 
-        startBtn = findViewById(R.id.startbtn);
-        startBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
+        Button startButton = (Button) findViewById(R.id.play);
+        startButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(StartActivity.this, MainActivity.class));
-
+                firstPlayer = firstPlayerInput.getText().toString();
+                secondPlayer = secondPlayerInput.getText().toString();
+                System.out.println("First player = " + firstPlayer);
+                System.out.println("Second player = " + secondPlayer);
+                startActivity(new Intent(StartActivity.this,GameActivity.class));
             }
         });
+
     }
 
 }
