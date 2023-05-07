@@ -10,10 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChessMate">
         <activity android:name=".Activity.StartActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN"/>-->
-<!--                <category android:name="android.intent.category.LAUNCHER"/>-->
-<!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".Activity.GameActivity">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
