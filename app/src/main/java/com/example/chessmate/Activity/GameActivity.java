@@ -451,7 +451,7 @@ public class GameActivity extends AppCompatActivity {
         Button notificationBtn = (Button) findViewById(R.id.notificationBtn);
         notificationBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                hideNotification();
+                hideNotification(true);
             }
         });
     }
@@ -527,6 +527,16 @@ public class GameActivity extends AppCompatActivity {
             notificationBgImage2.setVisibility(View.VISIBLE);
             playerName.setVisibility(View.GONE);
         }
+    }
+
+    private void highlightPiece(ImageButton id) {
+
+        // android:background="@drawable/rook"
+
+        if (id.getBackground().toString() == "@drawable/king_white" || id.getBackground().toString() == "@drawable/king") {
+            id.setBackground("@drawable/king_hl");
+        }
+
     }
 
 }
