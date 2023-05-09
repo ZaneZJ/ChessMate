@@ -19,9 +19,6 @@ public class StartActivity extends AppCompatActivity  {
     public String firstPlayer = "";
     public String secondPlayer = "";
 
-    TextInputEditText firstPlayerInput = (TextInputEditText) findViewById(R.id.firstPlayerInput);
-    TextInputEditText secondPlayerInput = (TextInputEditText) findViewById(R.id.secondPlayerInput);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +30,9 @@ public class StartActivity extends AppCompatActivity  {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_start);
+
+        TextInputEditText firstPlayerInput = (TextInputEditText) findViewById(R.id.firstPlayerInput);
+        TextInputEditText secondPlayerInput = (TextInputEditText) findViewById(R.id.secondPlayerInput);
 
         Button startButton = (Button) findViewById(R.id.play);
         startButton.setOnClickListener(new View.OnClickListener() {

@@ -1,6 +1,7 @@
 package com.example.chessmate.Activity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -470,7 +471,7 @@ public class GameActivity extends AppCompatActivity {
             // SECOND CLICK 3rd -> click on where to
             if (movePieceFrom == id) {
                 // 3.0 -> if click on the same as on 2nd
-                // UNHIGHLIGT 3.0.1. -> unhighlight + clear first pick + and return to 2nd step
+                // UNHIGHLIGT 3.0.1. -> unhighlight (reset the whole board) + clear first pick + and return to 2nd step
                 movePieceFrom = "";
             } else {
                 // 3.1 -> valid move
@@ -531,10 +532,28 @@ public class GameActivity extends AppCompatActivity {
 
     private void highlightPiece(ImageButton id) {
 
-        // android:background="@drawable/rook"
-
         if (id.getBackground().toString() == "@drawable/king_white" || id.getBackground().toString() == "@drawable/king") {
-            id.setBackground("@drawable/king_hl");
+            id.setBackground(Drawable.createFromPath("@drawable/king_hl.png"));
+        }
+
+        if (id.getBackground().toString() == "@drawable/queen_white" || id.getBackground().toString() == "@drawable/queen") {
+            id.setBackground(Drawable.createFromPath("@drawable/queen_hl.png"));
+        }
+
+        if (id.getBackground().toString() == "@drawable/rook_white" || id.getBackground().toString() == "@drawable/rook") {
+            id.setBackground(Drawable.createFromPath("@drawable/rook_hl.png"));
+        }
+
+        if (id.getBackground().toString() == "@drawable/bishop_white" || id.getBackground().toString() == "@drawable/bishop") {
+            id.setBackground(Drawable.createFromPath("@drawable/bishop_hl.png"));
+        }
+
+        if (id.getBackground().toString() == "@drawable/kinght_white" || id.getBackground().toString() == "@drawable/knight") {
+            id.setBackground(Drawable.createFromPath("@drawable/knight_hl.png"));
+        }
+
+        if (id.getBackground().toString() == "@drawable/pawn_white" || id.getBackground().toString() == "@drawable/pawn") {
+            id.setBackground(Drawable.createFromPath("@drawable/pawn_hl.png"));
         }
 
     }
