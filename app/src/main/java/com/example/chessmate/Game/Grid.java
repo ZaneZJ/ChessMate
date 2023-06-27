@@ -2,7 +2,7 @@ package com.example.chessmate.Game;
 
 public class Grid {
 
-    public String[][] chessGrid = {
+    public static String[][] chessGrid = {
             { "wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR" },
             { "wP", "wP", "wP", "wP", "wP", "wP", "wP", "wP" },
             { "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  " },
@@ -75,5 +75,7 @@ public class Grid {
             }
         }
     }
+
+    
 
 }

@@ -18,6 +18,8 @@ public class StartActivity extends AppCompatActivity  {
 
     public String firstPlayer = "";
     public String secondPlayer = "";
+    public TextInputEditText firstPlayerInput;
+    public TextInputEditText secondPlayerInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +33,8 @@ public class StartActivity extends AppCompatActivity  {
 
         setContentView(R.layout.activity_start);
 
-        TextInputEditText firstPlayerInput = (TextInputEditText) findViewById(R.id.firstPlayerInput);
-        TextInputEditText secondPlayerInput = (TextInputEditText) findViewById(R.id.secondPlayerInput);
+        firstPlayerInput = (TextInputEditText) findViewById(R.id.firstPlayerInput);
+        secondPlayerInput = (TextInputEditText) findViewById(R.id.secondPlayerInput);
 
         Button startButton = (Button) findViewById(R.id.play);
         startButton.setOnClickListener(new View.OnClickListener() {

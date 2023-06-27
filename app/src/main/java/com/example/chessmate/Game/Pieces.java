@@ -1,8 +1,11 @@
 package com.example.chessmate.Game;
 
+import com.example.chessmate.Activity.GameActivity;
+
 public class Pieces {
 
     private Game game;
+    GameActivity gameAct = new GameActivity();
 
     public Pieces(Game game) {
         this.game = game;
@@ -61,10 +64,12 @@ public class Pieces {
                                 game.nextTurn();
                                 return;
                             } else if (game.grid.chessGrid[row][col] != Values.EMPTY) {
+                                gameAct.setPiecesOnBoard();
                                 break;
                             }
                             col += changeJ;
                         } else {
+                            gameAct.setPiecesOnBoard();
                             break;
                         }
                     }
@@ -152,6 +157,7 @@ public class Pieces {
                         game.nextTurn();
                         return;
                     } else if (game.grid.chessGrid[row][col] != Values.EMPTY) {
+                        gameAct.setPiecesOnBoard();
                         break;
                     }
                 }
@@ -182,6 +188,7 @@ public class Pieces {
                         game.nextTurn();
                         return;
                     } else if (game.grid.chessGrid[row][col] != Values.EMPTY) {
+                        gameAct.setPiecesOnBoard();
                         break;
                     }
                 }
@@ -211,10 +218,12 @@ public class Pieces {
                                 game.nextTurn();
                                 return;
                             } else if (game.grid.chessGrid[row][col] != Values.EMPTY) {
+                                gameAct.setPiecesOnBoard();
                                 break;
                             }
                             col += changeJ;
                         } else {
+                            gameAct.setPiecesOnBoard();
                             break;
                         }
                     }
@@ -229,6 +238,7 @@ public class Pieces {
                         game.nextTurn();
                         return;
                     } else if (game.grid.chessGrid[row][col] != Values.EMPTY) {
+                        gameAct.setPiecesOnBoard();
                         break;
                     }
                 }
@@ -242,6 +252,7 @@ public class Pieces {
                         game.nextTurn();
                         return;
                     } else if (game.grid.chessGrid[row][col] != Values.EMPTY) {
+                        gameAct.setPiecesOnBoard();
                         break;
                     }
                 }
@@ -380,6 +391,7 @@ public class Pieces {
                         game.nextTurn();
                         return;
                     } else if (game.grid.chessGrid[row][col] != Values.EMPTY) {
+                        gameAct.setPiecesOnBoard();
                         break;
                     }
                 }
@@ -413,6 +425,7 @@ public class Pieces {
                         game.nextTurn();
                         return;
                     } else if (game.grid.chessGrid[row][col] != Values.EMPTY) {
+                        gameAct.setPiecesOnBoard();
                         break;
                     }
                 }

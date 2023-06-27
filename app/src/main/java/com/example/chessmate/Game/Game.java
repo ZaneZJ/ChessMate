@@ -1,8 +1,15 @@
 package com.example.chessmate.Game;
 
+import com.example.chessmate.Activity.GameActivity;
+import com.example.chessmate.Activity.StartActivity;
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.util.Scanner;
 
 public class Game {
+
+    StartActivity stAct = new StartActivity();
+    GameActivity gameAct = new GameActivity();
 
     public int fromRow, fromCol, toRow, toCol;
     public boolean stopTheGame = false;
@@ -24,6 +31,7 @@ public class Game {
         } else {
             playerTurn = Values.WHITE;
         }
+        gameAct.setPiecesOnBoard();
     }
 
     public void print() {
@@ -58,9 +66,9 @@ public class Game {
         System.out.println();
     }
 
-    public void move() {
+    public void move(int inputColFrom, int inputRowFrom, int inputColTo, int inputRowTo) {
 
-        while (stopTheGame == false) {
+//        while (stopTheGame == false) {
 
             if (playerTurn == Values.WHITE) {
                 System.out.println();
@@ -71,22 +79,26 @@ public class Game {
             }
 
             // Insert column :
-            fromCol = inputCol("Column of the piece that you want to move: ");
+            fromCol = inputColFrom;
 
             // Insert row :
-            fromRow = inputRow("Row of the piece that you want to move: ");
+            fromRow = inputRowFrom;
 
             // Insert column :
-            toCol = inputCol("Column where you want to move the piece: ");
+            toCol = inputColTo;
 
             // Insert row :
-            toRow = inputRow("Row where you want to move the piece: ");
+            toRow = inputRowTo;
 
             pieces.grid(fromRow, fromCol, toRow, toCol);
+            // 3.1.1.2 -> game continiue -> switch players + display info window + return to 1st step
+            // 3.2 -> invalid move
+            // 3.2.1 -> display invalid move error + return to 2nd step
             print();
+            // 3.1.1.1 -> game over -> display info window + return to start activity + clear player names
             isGameOver();
 
-        }
+//        }
     }
 
     private int inputCol(String message) {
@@ -155,27 +167,33 @@ public class Game {
         if (blackKingAlive == false) {
             System.out.println("End of the game!");
             System.out.println("White won!");
-            Scanner playYN = new Scanner(System.in);
-            System.out.println("Do you want to play another game y/n: ");
-            char play = playYN.next().charAt(0);
-            if (play == 'y') {
-                grid.boardClear();
-                print();
-            } else if (play == 'n') {
-                stopTheGame = true;
-            }
+
+            // Clear player names
+            stAct.firstPlayer = "";
+            stAct.secondPlayer = "";
+            stAct.firstPlayerInput.setText("");
+            stAct.secondPlayerInput.setText("");
+
+            // TODO: return back to the main view
+
+            grid.boardClear();
+            print();
+
         } else if (whiteKingAlive == false) {
             System.out.println("End of the game!");
             System.out.println("Black won!");
-            Scanner playYN = new Scanner(System.in);
-            System.out.println("Do you want to play another game y/n: ");
-            char play = playYN.next().charAt(0);
-            if (play == 'y') {
-                grid.boardClear();
-                print();
-            } else if (play == 'n') {
-                stopTheGame = true;
-            }
+
+            // Clear player names
+            stAct.firstPlayer = "";
+            stAct.secondPlayer = "";
+            stAct.firstPlayerInput.setText("");
+            stAct.secondPlayerInput.setText("");
+
+            // TODO: return back to the main view
+
+            grid.boardClear();
+            print();
+
         }
     }
 
